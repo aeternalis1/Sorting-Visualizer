@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<body bgcolor="#000000">
+		<link rel = "stylesheet"
+			type = "text/css"
+			href = "index.css" />
+		<div class="toolbar">
+		  	<a class="title">Sorting Visualizer</a>
+		  	<a onclick="randomizeArray(200,1500,750)">Randomize array</a>
+		  	<a>Array Size</a>
+		  	<a>Algorithm</a>
+		  	<div class="dropdown">
+			  <button class="dropbtn">Quick Sort</button>
+			  <div class="dropdown-content">
+			    <a class="drop">Bubble Sort</a>
+			    <a class="drop">Merge Sort</a>
+			    <a class="drop">Insertion Sort</a>
+			    <a class="drop">Selection Sort</a>
+			    <a class="drop">Heap Sort</a>
+			  </div>
+			</div>
+		</div>
+		<canvas id="myCanvas" width="1500" height="800" ></canvas>
+		<script src="index.js"></script>
+	</body>
+</html>
