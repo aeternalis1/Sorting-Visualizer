@@ -1,10 +1,12 @@
-function randomizeArray(numElements, windowSizeX, windowSizeY){
-	var width = Math.floor(windowSizeX / numElements);
-	var height = Math.floor(windowSizeY / numElements);
+function randomizeArray(numElements){
+	canvasWidth = window.innerWidth - Math.floor(window.innerWidth / 10);
+	canvasHeight = window.innerHeight - Math.floor(window.innerHeight / 10);
+	var width = Math.floor(canvasWidth / numElements);
+	var height = Math.floor(canvasHeight / numElements);
 	var elements = new Array(numElements);
 	var inc = numElements;
-	if (windowSizeY % numElements != 0){
-		inc = numElements / (windowSizeY % numElements);
+	if (canvasHeight % numElements != 0){
+		inc = numElements / (canvasHeight % numElements);
 	}
 	for (var i = 0; i < numElements; i++){
 		elements[i] = height * (i + 1) + i / inc;
@@ -18,16 +20,17 @@ function randomizeArray(numElements, windowSizeX, windowSizeY){
 	var x = 0;
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
+	ctx.canvas.width  = width * numElements;
+  	ctx.canvas.height = canvasHeight;
 	ctx.beginPath();
-	ctx.rect(0, 0, windowSizeX, windowSizeY);
+	ctx.rect(0, 0, canvasWidth, canvasHeight);
 	ctx.fillStyle = "black";
 	ctx.fill();
 	ctx.beginPath();
 	ctx.fillStyle = "white";
 	for (var i = 0; i < numElements; i++){
-		ctx.rect(x, 0, width-1, elements[i]);
+		ctx.rect(x, canvasHeight - elements[i], width-1, elements[i]);
 		x += width;
 	}
 	ctx.fill();
 }
-randomizeArray(200, 1500, 750);
