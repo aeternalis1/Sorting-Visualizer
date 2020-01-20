@@ -7,8 +7,11 @@
 			href = "index.css" />
 		<div class="toolbar">
 		  	<a class="title">Sorting Visualizer</a>
-		  	<a onclick="randomizeArray(500)">Randomize array</a>
-		  	<a>Array Size</a>
+		  	<a onclick="randomizeArray(window.numElements)">Randomize array</a>
+ 			<a>Array Size: <span id="size"></span></a>
+		  	<div class="slidecontainer">
+			  	<input type="range" min="10" max="500" value="10" class="slider" id="myRange">
+			</div>
 		  	<a>Algorithm</a>
 		  	<div class="dropdown">
 			  <button class="dropbtn">Quick Sort</button>
@@ -20,7 +23,7 @@
 			    <a class="drop">Heap Sort</a>
 			  </div>
 			</div>
-			<a onclick="bubbleSort(500)"> Run! </a>
+			<a onclick="bubbleSort(window.numElements)"> Run! </a>
 		</div>
 		<canvas id="myCanvas"></canvas>
 	</body>
@@ -31,5 +34,7 @@
 	<script>
 		window.elements = new Array();
 		window.coords = new Array();
+		window.delay = 4;
+		window.numElements = 10;
 	</script>
 </html>

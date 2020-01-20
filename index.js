@@ -38,3 +38,14 @@ function randomizeArray(numElements){
 	}
 	ctx.fill();
 }
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("size");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  	output.innerHTML = this.value;
+  	window.numElements = this.value;
+  	randomizeArray(this.value);
+}

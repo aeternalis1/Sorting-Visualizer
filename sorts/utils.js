@@ -14,7 +14,7 @@ async function considerBar(i){
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	paintRect(cur[0], cur[1], cur[2], window.elements[i], "red", ctx);
-	await sleep(0.1);
+	await sleep(window.delay);
 	paintRect(cur[0], cur[1], cur[2], window.elements[i], "white", ctx);
 }
 
@@ -25,7 +25,7 @@ async function swapBars(i, j){
 	var ctx = c.getContext("2d");
 	paintRect(bar1[0], bar1[1], bar1[2], window.elements[i], "green", ctx);
 	paintRect(bar2[0], bar2[1], bar2[2], window.elements[j], "green", ctx);
-	await sleep(0.1);
+	await sleep(window.delay);
 	paintRect(bar1[0], bar1[1]-10, bar1[2], window.elements[i]+10, "black", ctx);
 	paintRect(bar2[0], bar2[1]-10, bar2[2], window.elements[j]+10, "black", ctx);
 	var temp = window.elements[i];
@@ -36,7 +36,7 @@ async function swapBars(i, j){
 	window.coords[j][1] = temp;
 	paintRect(bar1[0], bar1[1], bar1[2], window.elements[i], "green", ctx);
 	paintRect(bar2[0], bar2[1], bar2[2], window.elements[j], "green", ctx);
-	await sleep(0.1);
+	await sleep(window.delay);
 	paintRect(bar1[0], bar1[1], bar1[2], window.elements[i], "white", ctx);
 	paintRect(bar2[0], bar2[1], bar2[2], window.elements[j], "white", ctx);
 }
