@@ -9,6 +9,13 @@ function paintRect(x, y, w, h, col, ctx){
 	ctx.fill();
 }
 
+function highlight(i, col){
+	var cur = window.coords[i];
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	paintRect(cur[0], cur[1], cur[2], window.elements[i], col, ctx);
+}
+
 async function considerBar(i){
 	var cur = window.coords[i];
 	var c = document.getElementById("myCanvas");

@@ -8,18 +8,18 @@
 		<div class="toolbar">
 		  	<a class="title">Sorting Visualizer</a>
 		  	<a onclick="randomizeArray(window.numElements)">Randomize array</a>
- 			<a>Array Size: <span id="size"></span></a>
 		  	<div class="slidecontainer">
 			  	<input type="range" min="10" max="500" value="10" class="slider" id="myRange">
 			</div>
-		  	<a>Algorithm</a>
+ 			<a class = "nohover">Array Size: <span id="size"></span></a>
+		  	<a class = "nohover">Algorithm</a>
 		  	<div class="dropdown">
 			  <button class="dropbtn">Quick Sort</button>
 			  <div class="dropdown-content">
-			    <a class="drop">Bubble Sort</a>
+			    <a class="drop" onclick="bubbleSort(window.numElements)">Bubble Sort</a>
 			    <a class="drop">Merge Sort</a>
-			    <a class="drop">Insertion Sort</a>
-			    <a class="drop">Selection Sort</a>
+			    <a class="drop" onclick = "insertionSort(window.numElements)">Insertion Sort</a>
+			    <a class="drop" onclick = "selectionSort(window.numElements)">Selection Sort</a>
 			    <a class="drop">Heap Sort</a>
 			  </div>
 			</div>
@@ -30,6 +30,8 @@
 	<script src="index.js"></script>
 	<script src="sorts/utils.js"></script>
 	<script src="sorts/bubble_sort.js"></script>
+	<script src="sorts/insertion_sort.js"></script>
+	<script src="sorts/selection_sort.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		window.elements = new Array();
