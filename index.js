@@ -19,7 +19,8 @@ function randomizeArray(numElements){
 		window.elements[j] = temp;
 	}
 	for (var i = 0; i < numElements; i++){
-		window.coords[i] = [width * i, canvasHeight - window.elements[i], width - 1];
+		if (width == 1) window.coords[i] = [width * i, canvasHeight - window.elements[i], width];
+		else window.coords[i] = [width * i, canvasHeight - window.elements[i], width - 1];
 	}
 	var x = 0;
 	var c = document.getElementById("myCanvas");
@@ -33,7 +34,8 @@ function randomizeArray(numElements){
 	ctx.beginPath();
 	ctx.fillStyle = "white";
 	for (var i = 0; i < numElements; i++){
-		ctx.rect(x, canvasHeight - window.elements[i], width - 1, window.elements[i]);
+		if (width == 1) ctx.rect(x, canvasHeight - window.elements[i], width, window.elements[i]);
+		else ctx.rect(x, canvasHeight - window.elements[i], width - 1, window.elements[i]);
 		x += width;
 	}
 	ctx.fill();

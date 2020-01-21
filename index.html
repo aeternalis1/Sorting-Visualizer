@@ -9,22 +9,21 @@
 		  	<a class="title">Sorting Visualizer</a>
 		  	<a onclick="randomizeArray(window.numElements)">Randomize array</a>
 		  	<div class="slidecontainer">
-			  	<input type="range" min="5" max="1000" value="250" class="slider" id="myRange">
+			  	<input type="range" min="5" max="1700" value="250" class="slider" id="myRange">
 			</div>
  			<a class = "nohover">Array Size: <span id="size"></span></a>
-		  	<a class = "nohover">Algorithm</a>
 		  	<div class="dropdown">
-			  <button class="dropbtn">Quick Sort</button>
+			  <button class="dropbtn">Algorithm</button>
 			  <div class="dropdown-content">
 			    <a class="drop" onclick="bubbleSort(window.numElements)">Bubble Sort</a>
 			    <a class="drop">Merge Sort</a>
 			    <a class="drop" onclick = "insertionSort(window.numElements)">Insertion Sort</a>
 			    <a class="drop" onclick = "selectionSort(window.numElements)">Selection Sort</a>
+			    <a class="drop" onclick = "quickSort(0, window.numElements - 1, window.numElements)">Quick Sort</a>
 			    <a class="drop" onclick = "quickSort2(0, window.numElements - 1, window.numElements)">Quick Sort 2</a>
 			    <a class="drop">Heap Sort</a>
 			  </div>
 			</div>
-			<a onclick = "quickSort(0, window.numElements - 1, window.numElements)"> Run! </a>
 		</div>
 		<canvas id="myCanvas"></canvas>
 	</body>
