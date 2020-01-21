@@ -9,11 +9,38 @@ function paintRect(x, y, w, h, col, ctx){
 	ctx.fill();
 }
 
+function resetCol(i){
+	var cur = window.coords[i];
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	paintRect(cur[0], cur[1] - 10, cur[2], window.elements[i] + 10, "black", ctx);
+}
+
 function highlight(i, col){
 	var cur = window.coords[i];
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	paintRect(cur[0], cur[1], cur[2], window.elements[i], col, ctx);
+}
+
+async function complete(numElements){
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	ctx.fillStyle = "green";
+	for (var i = 0; i < numElements; i++){
+		var cur = window.coords[i];
+		ctx.rect(cur[0], cur[1], cur[2], window.elements[i]);
+	}
+	ctx.fill();
+	await sleep(500);
+	ctx.beginPath();
+	ctx.fillStyle = "white";
+	for (var i = 0; i < numElements; i++){
+		var cur = window.coords[i];
+		ctx.rect(cur[0], cur[1], cur[2], window.elements[i]);
+	}
+	ctx.fill();
 }
 
 async function considerBar(i){
@@ -22,6 +49,7 @@ async function considerBar(i){
 	var ctx = c.getContext("2d");
 	paintRect(cur[0], cur[1], cur[2], window.elements[i], "red", ctx);
 	await sleep(window.delay);
+	resetCol(i);
 	paintRect(cur[0], cur[1], cur[2], window.elements[i], "white", ctx);
 }
 

@@ -9,7 +9,7 @@
 		  	<a class="title">Sorting Visualizer</a>
 		  	<a onclick="randomizeArray(window.numElements)">Randomize array</a>
 		  	<div class="slidecontainer">
-			  	<input type="range" min="10" max="500" value="10" class="slider" id="myRange">
+			  	<input type="range" min="5" max="1000" value="250" class="slider" id="myRange">
 			</div>
  			<a class = "nohover">Array Size: <span id="size"></span></a>
 		  	<a class = "nohover">Algorithm</a>
@@ -20,23 +20,26 @@
 			    <a class="drop">Merge Sort</a>
 			    <a class="drop" onclick = "insertionSort(window.numElements)">Insertion Sort</a>
 			    <a class="drop" onclick = "selectionSort(window.numElements)">Selection Sort</a>
+			    <a class="drop" onclick = "quickSort2(0, window.numElements - 1, window.numElements)">Quick Sort 2</a>
 			    <a class="drop">Heap Sort</a>
 			  </div>
 			</div>
-			<a onclick="bubbleSort(window.numElements)"> Run! </a>
+			<a onclick = "quickSort(0, window.numElements - 1, window.numElements)"> Run! </a>
 		</div>
 		<canvas id="myCanvas"></canvas>
 	</body>
+	<script>
+		window.elements = new Array();
+		window.coords = new Array();
+		window.delay = 4;
+		window.numElements = 250;
+	</script>
 	<script src="index.js"></script>
 	<script src="sorts/utils.js"></script>
 	<script src="sorts/bubble_sort.js"></script>
 	<script src="sorts/insertion_sort.js"></script>
 	<script src="sorts/selection_sort.js"></script>
+	<script src="sorts/quick_sort.js"></script>
+	<script src="sorts/quick_sort_2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script>
-		window.elements = new Array();
-		window.coords = new Array();
-		window.delay = 4;
-		window.numElements = 10;
-	</script>
 </html>

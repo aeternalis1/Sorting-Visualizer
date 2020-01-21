@@ -13,7 +13,8 @@ async function selectionSort(numElements){
 			}
 		}
 		highlight(ind, "white");
-		if (i == ind) continue;
-		swapBars(i, ind);
+		if (i != ind) await swapBars(i, ind);
+		resetCol(i);
+		highlight(i, "purple");
 	}
 }

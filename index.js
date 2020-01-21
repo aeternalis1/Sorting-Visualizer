@@ -49,3 +49,5 @@ slider.oninput = function() {
   	window.numElements = this.value;
   	randomizeArray(this.value);
 }
+
+randomizeArray(window.numElements);
