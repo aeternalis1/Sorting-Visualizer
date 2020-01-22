@@ -17,4 +17,5 @@ async function selectionSort(numElements){
 		resetCol(i);
 		highlight(i, "purple");
 	}
+	await complete(numElements);
 }

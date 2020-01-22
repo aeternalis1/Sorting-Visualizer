@@ -12,4 +12,5 @@ async function bubbleSort(numElements){
 		}
 		lastInd = nxt;
 	}
+	await complete(numElements);
 }

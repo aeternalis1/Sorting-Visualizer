@@ -41,15 +41,20 @@ function randomizeArray(numElements){
 	ctx.fill();
 }
 
-var slider = document.getElementById("myRange");
+var sizeSlider = document.getElementById("sizeSlider");
 var output = document.getElementById("size");
-output.innerHTML = slider.value; // Display the default slider value
+output.innerHTML = sizeSlider.value * 10;
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  	output.innerHTML = this.value;
-  	window.numElements = this.value;
-  	randomizeArray(this.value);
+sizeSlider.oninput = function() {
+  	output.innerHTML = this.value * 10;
+  	window.numElements = this.value * 10;
+  	randomizeArray(this.value * 10);
+}
+
+var speedSlider = document.getElementById("speedSlider")
+
+speedSlider.oninput = function() {
+	window.delay = Math.pow(1000, (1200 - this.value)/1000);
 }
 
 randomizeArray(window.numElements);

@@ -10,4 +10,5 @@ async function insertionSort(numElements){
 			await swapBars(j, j + 1);
 		}
 	}
+	await complete(numElements);
 }
