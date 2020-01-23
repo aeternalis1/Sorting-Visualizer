@@ -10,6 +10,7 @@ async function shellSort(numElements){
 		console.log(interval);
 		for (var i = numElements - 1; i >= numElements - interval; i--){
 			var start = i;
+			if (i - interval < 0) continue;
 			for (var j = i; j >= 0; j -= interval){
 				highlight(j,"red");
 				start = j;

@@ -63,10 +63,12 @@ async function swapBars(i, j){
 	await sleep(window.delay);
 	paintRect(bar1[0], bar1[1]-10, bar1[2], window.elements[i]+10, "black", ctx);
 	paintRect(bar2[0], bar2[1]-10, bar2[2], window.elements[j]+10, "black", ctx);
+
 	var temp = window.elements[i];
 	window.elements[i] = window.elements[j];
 	window.elements[j] = temp;
-	var temp = bar1[1];
+
+	temp = bar1[1];
 	window.coords[i][1] = window.coords[j][1];
 	window.coords[j][1] = temp;
 	paintRect(bar1[0], bar1[1], bar1[2], window.elements[i], "green", ctx);
