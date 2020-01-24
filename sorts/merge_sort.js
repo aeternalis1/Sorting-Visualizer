@@ -18,18 +18,22 @@ async function mergeSort(l, r, numElements){
 			inds[ind] = i-l;	// stores index of value from elements that belongs at ind
 			inds2[i-l] = i-l;	// stores CURRENT index of element ORIGINALLY at [i]
 			inds3[i-l] = i-l;
+			await considerBar(i);
 			i++;
 		}else{
 			arr[ind] = window.elements[j];
 			inds[ind] = j-l;
 			inds2[j-l] = j-l;
 			inds3[j-l] = j-l;
+			await considerBar(j);
 			j++;
 		}
 	}
 
 	for (var ind = 0; ind < r-l; ind++){
 		if (inds3[ind] == inds[ind]) continue;
+		await considerBar(ind + l);
+		await considerBar(inds2[inds[ind]]+l);
 		await swapBars(ind+l, inds2[inds[ind]]+l);
 		inds3[inds2[inds[ind]]] = inds3[ind];
 		inds2[inds3[ind]] = inds2[inds[ind]];

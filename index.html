@@ -16,7 +16,10 @@
 			  <button class="dropbtn">Algorithm</button>
 			  <div class="dropdown-content">
 			    <a class="drop" onclick="bubbleSort(window.numElements)">Bubble Sort</a>
+			    <a class="drop" onclick="oddEvenSort(window.numElements)">Odd Even Sort</a>
+			    <a class="drop" onclick="cocktailSort(window.numElements)">Cocktail Sort</a>
 			    <a class="drop" onclick = "mergeSort(0, window.numElements - 1, window.numElements)">Merge Sort</a>
+			    <a class="drop" onclick = "bitonicSort(true, 0, window.numElements, window.numElements)">Bitonic Sort</a>
 			    <a class="drop" onclick = "insertionSort(window.numElements)">Insertion Sort</a>
 			    <a class="drop" onclick = "selectionSort(window.numElements)">Selection Sort</a>
 			    <a class="drop" onclick = "quickSort(0, window.numElements - 1, window.numElements)">Quick Sort</a>
@@ -42,8 +45,11 @@
 	<script src="index.js"></script>
 	<script src="sorts/utils.js"></script>
 	<script src="sorts/bubble_sort.js"></script>
+	<script src="sorts/odd_even_sort.js"></script>
+	<script src="sorts/cocktail_sort.js"></script>
 	<script src="sorts/insertion_sort.js"></script>
 	<script src="sorts/selection_sort.js"></script>
+	<script src="sorts/bitonic_sort.js"></script>
 	<script src="sorts/shell_sort.js"></script>
 	<script src="sorts/merge_sort.js"></script>
 	<script src="sorts/quick_sort.js"></script>
