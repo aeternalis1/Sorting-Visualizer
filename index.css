@@ -10,8 +10,13 @@ html, body {
   user-select: none;
 }
 
+.parentdiv{
+  text-align: center;
+}
+
 /* Add a black background color to the top navigation */
 .toolbar {
+  display: inline-block;
   overflow: hidden;
 }
 
@@ -126,5 +131,5 @@ canvas {
 }
 
 .label {
-  margin: 0 auto;
+  padding-right: 50px;
 }

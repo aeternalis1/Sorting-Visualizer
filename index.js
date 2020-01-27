@@ -41,6 +41,47 @@ function randomizeArray(numElements){
 	ctx.fill();
 }
 
+function changeAlgo(algo){
+	window.algo = algo;
+	var cur = document.getElementById("currentalgo");
+	cur.innerHTML = algo;
+}
+
+function runAlgo(numElements){
+	switch (window.algo){
+		case "Bitonic Sort":
+			bitonicSort(true, 0, numElements-1, numElements);
+			break;
+		case "Bubble Sort":
+			bubbleSort(numElements);
+			break;
+		case "Cocktail Sort":
+			cocktailSort(numElements);
+			break;
+		case "Insertion Sort":
+			insertionSort(numElements);
+			break;
+		case "Merge Sort":
+			mergeSort(0, numElements-1, numElements);
+			break;
+		case "Odd Even Sort":
+			oddEvenSort(numElements);
+			break;
+		case "Quick Sort":
+			quickSort(0, numElements-1, numElements);
+			break;
+		case "Quick Sort 2":
+			quickSort2(0, numElements-1, numElements);
+			break;
+		case "Selection Sort":
+			selectionSort(numElements);
+			break;
+		case "Shell Sort":
+			shellSort(numElements);
+			break;
+	}
+}
+
 var sizeSlider = document.getElementById("sizeSlider");
 var output = document.getElementById("size");
 output.innerHTML = sizeSlider.value * 10;
