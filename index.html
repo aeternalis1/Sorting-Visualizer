@@ -7,7 +7,7 @@
 			href = "index.css" />
 		<div class="parentdiv">
 			<div class="toolbar">
-			  	<a onclick="randomizeArray(window.numElements)">Randomize array</a>
+			  	<a id="randomize" onclick="randomizeArray(window.numElements)">Randomize array</a>
 				<div class="slidecontainer">
 				  	<input type="range" min="350" max="1000" value="1000" class="slider" id="speedSlider">
 				</div>
@@ -34,7 +34,7 @@
 				    <a class="drop" onclick = "changeAlgo('Shell Sort')">Shell Sort</a>
 				  </div>
 				</div>
-				<a onclick="runAlgo(window.numElements)">Run!</a>
+				<a id="runbutton" onclick="runAlgo(window.numElements)">Run!</a>
 			</div>
 		</div>
 		<canvas id="myCanvas"></canvas>
@@ -45,7 +45,7 @@
 		window.delay = 4;
 		window.numElements = 750;
 		window.running = false;
-		window.algo = "quick_sort";
+		window.algo = "Quick Sort";
 	</script>
 	<script src="index.js"></script>
 	<script src="sorts/utils.js"></script>

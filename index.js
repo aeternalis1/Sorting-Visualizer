@@ -1,4 +1,5 @@
 function randomizeArray(numElements){
+	if (window.running) return;
 	canvasWidth = window.innerWidth - Math.floor(window.innerWidth / 10);
 	canvasHeight = window.innerHeight - Math.floor(window.innerHeight / 10);
 	var width = Math.floor(canvasWidth / numElements);
@@ -48,6 +49,9 @@ function changeAlgo(algo){
 }
 
 function runAlgo(numElements){
+	window.running = true;
+	document.getElementById('randomize').style.pointerEvents = 'none';
+	document.getElementById('runbutton').style.pointerEvents = 'none';
 	switch (window.algo){
 		case "Bitonic Sort":
 			bitonicSort(true, 0, numElements-1, numElements);
