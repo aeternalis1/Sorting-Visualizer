@@ -27,6 +27,7 @@ async function complete(numElements){
 	window.running = false;
 	document.getElementById('randomize').style.pointerEvents = 'auto';
 	document.getElementById('runbutton').style.pointerEvents = 'auto';
+	document.getElementById('sizeSlider').disabled = false;
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
 	ctx.beginPath();

@@ -52,6 +52,7 @@ function runAlgo(numElements){
 	window.running = true;
 	document.getElementById('randomize').style.pointerEvents = 'none';
 	document.getElementById('runbutton').style.pointerEvents = 'none';
+	document.getElementById('sizeSlider').disabled = true;
 	switch (window.algo){
 		case "Bitonic Sort":
 			bitonicSort(true, 0, numElements-1, numElements);
@@ -61,6 +62,9 @@ function runAlgo(numElements){
 			break;
 		case "Cocktail Sort":
 			cocktailSort(numElements);
+			break;
+		case "Heap Sort":
+			heapSort(numElements);
 			break;
 		case "Insertion Sort":
 			insertionSort(numElements);
