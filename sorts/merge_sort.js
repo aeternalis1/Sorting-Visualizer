@@ -38,15 +38,6 @@ async function mergeSort(l, r, numElements){
 		inds3[inds2[inds[ind]]] = inds3[ind];
 		inds2[inds3[ind]] = inds2[inds[ind]];
 
-
-		/*while (inds2[ind] != ind){
-			await considerBar(ind + l);
-			await considerBar(inds2[ind] + l);
-			await swapBars(ind + l, inds2[ind] + l);
-			var temp = inds2[ind];
-			inds2[ind] = inds2[inds2[ind]];
-			inds2[temp] = temp;
-		}*/
 	}
 
 	if (l == 0 && r + 1 == numElements){

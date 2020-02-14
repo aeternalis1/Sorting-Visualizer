@@ -90,6 +90,9 @@ function runAlgo(numElements){
 		case "Shell Sort":
 			shellSort(numElements);
 			break;
+		case "Tim Sort":
+			timSort(numElements);
+			break;
 	}
 }
 
