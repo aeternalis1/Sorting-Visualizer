@@ -55,13 +55,16 @@ function runAlgo(numElements){
 	document.getElementById('sizeSlider').disabled = true;
 	switch (window.algo){
 		case "Bitonic Sort":
-			bitonicSort(true, 0, numElements-1, numElements);
+			bitonicSort(true, 0, numElements, numElements);
 			break;
 		case "Bubble Sort":
 			bubbleSort(numElements);
 			break;
 		case "Cocktail Sort":
 			cocktailSort(numElements);
+			break;
+		case "Comb Sort":
+			combSort(numElements);
 			break;
 		case "Heap Sort":
 			heapSort(numElements);
